@@ -1,0 +1,8 @@
+[]register a user
+[]Login a user
+[]who am i
+[]add a product
+[]update  a product
+[]get all product
+[]get single product
+[]delete product
