@@ -22,9 +22,6 @@ db.once('open', () => {
 
 
 
-
-
-
 app.use(express.json());         //use for enable json data  
 app.use('/api', routes);
 
