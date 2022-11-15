@@ -6,8 +6,11 @@ import routes from './routes'
 import errorHandler from './middlewares/errorHandler'
 import mongoose from 'mongoose'
 import path from 'path';
+import cors from 'cors';
 
-// const mongoose = require("mongoose");
+  
+
+
 
 // Database connection
 mongoose.connect(DB_URL, {
@@ -21,8 +24,10 @@ db.once('open', () => {
     console.log('DB connected...');
 });
 
+
 global.appRoot = path.resolve(__dirname);
-app.use(express.urlencoded({extended:false}));
+app.use(cors());
+app.use(express.urlencoded({extended:false}))   // use to handle multipart data
 
 
 
@@ -30,6 +35,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());         //use for enable json data  
 app.use('/api', routes);
 app.use('/uploads',express.static('uploads'))
+
+
 
 app.use(errorHandler);
 app.listen(APP_PORT, () => {

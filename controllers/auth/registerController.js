@@ -26,7 +26,7 @@ const registerController = {
         });
 
         console.log(req.body);
-        const { error } = registerSchema.validate(req.body);
+        const { error } = registerSchema.validate(req.body);    //get data from frontend
 
         if (error) {
             return next(error);  // middleware cath all the error
